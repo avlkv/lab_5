@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+
+    <!-- Cards -->
+    <div id="cards" class="container mb-2" style="padding-bottom: 1px">
+        <div class="section-title col-lg-7 col-md-4 col-sm-12 mb-4">
+            <h3 class="mb-4">Welcome to our book forum!</h3>
+            <p>Here is a list of books we have reviews on:</p>
+        </div>
+        {% for book in books %}
+                <div class="col-lg-7 col-md-4 col-sm-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ book.name }}</h4>
+                            <p class="card-text">{{ book.short_description }}...</p>
+                            <a href="/book/{{ book.id }}" class="btn btn-primary">More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
